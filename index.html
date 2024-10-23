@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>口令管理器</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1, h2 { text-align: center; }
+        input, button { width: 100%; padding: 10px; margin: 5px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+    </style>
+    <!-- 引入 CryptoJS 库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <h1>口令管理器</h1>
+
+    <!-- 登录界面 -->
+    <div id="login-container">
+        <h2>请输入主密码</h2>
+        <input type="password" id="master-password-input" placeholder="主密码">
+        <button id="login-button">登录</button>
+    </div>
+
+    <!-- 口令管理界面 -->
+    <div id="app-container" style="display: none;">
+        <button id="logout-button">退出登录</button>
+        <h2>添加新口令</h2>
+        <input type="text" id="site-input" placeholder="网站名称">
+        <input type="text" id="password-input" placeholder="口令">
+        <button id="add-button">添加</button>
+
+        <h2>已保存的口令</h2>
+        <table id="password-table">
+            <thead>
+                <tr>
+                    <th>网站</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 动态加载 -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
