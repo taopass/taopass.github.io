@@ -3,26 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>口令管理器</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        h1, h2 { text-align: center; }
-        input, button { width: 100%; padding: 10px; margin: 5px 0; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <!-- 引入 CryptoJS 库 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
     <h1>口令管理器</h1>
-
     <!-- 登录界面 -->
     <div id="login-container">
-        <h2>请输入主密码</h2>
-        <input type="password" id="master-password-input" placeholder="主密码">
+        <h2>登录</h2>
+        <input type="password" id="master-password-input" placeholder="请输入主密码">
         <button id="login-button">登录</button>
     </div>
-
     <!-- 口令管理界面 -->
     <div id="app-container" style="display: none;">
         <button id="logout-button">退出登录</button>
@@ -40,11 +32,14 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- 动态加载 -->
+                <!-- 动态添加 -->
             </tbody>
         </table>
-    </div>
 
+        <button id="export-button">导出数据</button>
+        <input type="file" id="import-file-input" style="display: none;">
+        <button id="import-button">导入数据</button>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
